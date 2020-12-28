@@ -1,14 +1,17 @@
 pipeline {
 agent any
+tools{
+maven "maven-hussain"
+}
 stages {
 stage('Checkout Source') {
       steps {
-        git 'https://github.com/mgsgoms/Docker-Project.git'
+        git 'https://github.com/mgsgoms/helloworld-java-maven.git'
       }
     }
-stage('executing uptime') {
+stage('execute maven') {
      steps {
-         sh "uptime"
+         sh "mvn clean install"
          }
          }
          }
